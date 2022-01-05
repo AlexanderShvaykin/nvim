@@ -14,7 +14,6 @@ hooks.add("setup_mappings", function(map)
    map("n", "<leader>q", ":q <CR>", opt)
    map("n", "<leader>s", ":w <CR>", opt)
    map("n", "<leader><leader>", ":NvimTreeToggle <CR>", opt)
-   map("n", "<CR>n", ":NvimTreeFocus <CR>", opt)
 end)
 
 -- NOTE : opt is a variable  there (most likely a table if you want multiple options),
