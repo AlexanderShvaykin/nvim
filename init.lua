@@ -26,7 +26,7 @@ end)
 -- examples below:
 
 hooks.add("install_plugins", function(use)
-
+  use("nathom/filetype.nvim")
 end)
 
 -- NOTE: we heavily suggest using Packer's lazy loading (with the 'event' field)

@@ -7,10 +7,11 @@ local M = {}
 -- example of changing theme:
 
 M.ui = {
-   -- theme = "gruvchad",
+   theme = "gruvchad",
 }
 
 M.plugins = {
+ 
    options = {
       lspconfig = {
          setup_lspconf = "custom.plugins.lspconfig",
