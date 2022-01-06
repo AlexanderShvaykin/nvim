@@ -14,6 +14,7 @@ hooks.add("setup_mappings", function(map)
    map("n", "<leader>q", ":q <CR>", opt)
    map("n", "<leader>s", ":w <CR>", opt)
    map("n", "<leader><leader>", ":NvimTreeToggle <CR>", opt)
+   vim.opt.relativenumber = true
 end)
 
 -- NOTE : opt is a variable  there (most likely a table if you want multiple options),
@@ -26,6 +27,7 @@ end)
 
 hooks.add("install_plugins", function(use)
   use("nathom/filetype.nvim")
+  use("tpope/vim-rails")
 end)
 
 -- NOTE: we heavily suggest using Packer's lazy loading (with the 'event' field)
