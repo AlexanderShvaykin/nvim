@@ -29,6 +29,7 @@ hooks.add("install_plugins", function(use)
   use("nathom/filetype.nvim")
   use("tpope/vim-rails")
   use('dyng/ctrlsf.vim')
+  use("AndrewRadev/splitjoin.vim")
 end)
 
 -- NOTE: we heavily suggest using Packer's lazy loading (with the 'event' field)
