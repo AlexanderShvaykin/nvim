@@ -29,6 +29,7 @@ hooks.add("install_plugins", function(use)
   use('dyng/ctrlsf.vim')
   use("AndrewRadev/splitjoin.vim")
   use("machakann/vim-highlightedyank")
+  use("elixir-editors/vim-elixir")
 end)
 
 -- NOTE: we heavily suggest using Packer's lazy loading (with the 'event' field)
