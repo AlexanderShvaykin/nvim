@@ -13,8 +13,6 @@ hooks.add("setup_mappings", function(map)
    map("n", "<leader>cc", ":Telescope <CR>", opt)
    map("n", "<leader>q", ":q <CR>", opt)
    map("n", "<leader>s", ":w <CR>", opt)
-   map("n", "<leader><leader>", ":NvimTreeToggle <CR>", opt)
-   vim.opt.relativenumber = true
 end)
 
 -- NOTE : opt is a variable  there (most likely a table if you want multiple options),
@@ -30,6 +28,7 @@ hooks.add("install_plugins", function(use)
   use("tpope/vim-rails")
   use('dyng/ctrlsf.vim')
   use("AndrewRadev/splitjoin.vim")
+  use("machakann/vim-highlightedyank")
 end)
 
 -- NOTE: we heavily suggest using Packer's lazy loading (with the 'event' field)
