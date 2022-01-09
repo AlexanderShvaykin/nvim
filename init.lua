@@ -1,3 +1,4 @@
+require("custom.autocmds")
 -- This is an example init file , its supposed to be placed in /lua/custom dir
 -- lua/custom/init.lua
 
