@@ -18,7 +18,12 @@ M.setup_lsp = function(attach, capabilities)
    lspconfig.solargraph.setup {
      on_attach = attach,
      capabilities = capabilities,
-     useBundler = false,
+     settings = {
+       solargraph = {
+         useBundler = false,
+         diagnostics = false,
+       }
+     }
    }
 end
 
