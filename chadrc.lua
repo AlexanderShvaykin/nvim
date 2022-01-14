@@ -19,6 +19,10 @@ M.mappings = {
     save_file = "<leader>s", -- save file using :w
   },
   plugins = {
+    dashboard = {
+      session_load = "<leader>l",
+      session_save = "<C-s>",
+    },
     bufferline = {
       next_buffer = "<C-n>",
       prev_buffer = "<C-p>",
@@ -30,11 +34,14 @@ M.mappings = {
 }
 
 M.plugins = {
-   options = {
-      lspconfig = {
-         setup_lspconf = "custom.plugins.lspconfig",
-      },
-   },
+  status = {
+    dashboard = true,
+  },
+  options = {
+    lspconfig = {
+      setup_lspconf = "custom.plugins.lspconfig",
+    },
+  },
 }
 
 return M
