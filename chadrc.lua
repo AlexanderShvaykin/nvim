@@ -15,6 +15,9 @@ M.ui = {
 }
 
 M.mappings = {
+  misc = {
+    save_file = "<leader>s", -- save file using :w
+  },
   plugins = {
     bufferline = {
       next_buffer = "<C-n>",

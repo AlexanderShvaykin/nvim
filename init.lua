@@ -12,8 +12,8 @@ local hooks = require "core.hooks"
 
 hooks.add("setup_mappings", function(map)
    map("n", "<leader>cc", ":Telescope <CR>", opt)
+   map("n", "<leader>gf", ":Telescope git_files <CR>", opt)
    map("n", "<leader>q", ":q <CR>", opt)
-   map("n", "<leader>s", ":w <CR>", opt)
 end)
 
 -- NOTE : opt is a variable  there (most likely a table if you want multiple options),
