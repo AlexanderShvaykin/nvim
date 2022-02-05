@@ -1,6 +1,6 @@
 -- This is an example chadrc file , its supposed to be placed in /lua/custom dir
 -- lua/custom/chadrc.lua
-
+local userPlugins = require "custom.plugins"
 local M = {}
 
 -- make sure you maintain the structure of `core/default_config.lua` here,
@@ -34,6 +34,7 @@ M.mappings = {
 }
 
 M.plugins = {
+  install = userPlugins,
   status = {
     dashboard = true,
   },
