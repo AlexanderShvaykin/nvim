@@ -10,3 +10,13 @@ local opt = vim.opt
 opt.relativenumber = true
 vim.cmd[[ au InsertEnter * set norelativenumber ]]
 vim.cmd[[ au InsertLeave * set relativenumber ]]
+vim.cmd([[set cc=100]])
+
+vim.cmd([[let g:rails_projections = {
+\ "app/api/*.rb": {
+\   "command": "api",
+\   "test": [
+\     "spec/requests/{}_spec.rb"
+\   ],
+\ }}
+]])
