@@ -12,7 +12,15 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-lspconfig.gopls.setup{}
+lspconfig.gopls.setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+
+lspconfig.golangci_lint_ls.setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
 
 lspconfig.solargraph.setup {
   on_attach = on_attach,
