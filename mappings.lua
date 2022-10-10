@@ -8,8 +8,9 @@ M.general = {
 
 M.nvimtree = {
    n = {
-      ["<leader><leader>"] = { "<cmd> NvimTreeToggle <CR>", "toggle nvimtree" },
-   },
+    ["<leader>e"] = { "<cmd> NvimTreeFindFile <CR>", "focus nvimtree" },
+    ["<leader><leader>"] = { "<cmd> NvimTreeToggle <CR>", "toggle nvimtree" },
+  },
 }
 
 M.tabufline = {
