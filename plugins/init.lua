@@ -39,6 +39,26 @@ return {
     end,
   },
 
+  ["tzachar/cmp-tabnine"] = {
+    after = "nvim-cmp",
+    run = "./install.sh",
+  },
+
+  ["hrsh7th/nvim-cmp"] = {
+    override_options = function()
+      local cmp = require "cmp"
+
+      return {
+        mapping = {
+          ["<C-d>"] = cmp.mapping.scroll_docs(-8),
+        },
+        sources = {
+          { name = 'cmp_tabnine' },
+        }
+      }
+    end,
+  },
+
   -- remove plugin
   -- ["hrsh7th/cmp-path"] = false,
 }
