@@ -42,6 +42,18 @@ return {
   ["tzachar/cmp-tabnine"] = {
     after = "nvim-cmp",
     run = "./install.sh",
+    config = function()
+      local tabnine = require('cmp_tabnine.config')
+
+      tabnine.setup({
+        max_lines = 100,
+        max_num_results = 10,
+        sort = true,
+        run_on_every_keystroke = true,
+        snippet_placeholder = '..',
+        show_prediction_strength = true
+      })
+    end,
   },
 
   ["hrsh7th/nvim-cmp"] = {
