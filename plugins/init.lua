@@ -2,6 +2,7 @@ local overrides = require "custom.plugins.overrides"
 
 return {
   ["tpope/vim-rails"] = {},
+  ["dyng/ctrlsf.vim"] = {},
   ["machakann/vim-highlightedyank"] = {},
   ["neovim/nvim-lspconfig"] = {
     config = function()
