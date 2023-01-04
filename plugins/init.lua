@@ -1,6 +1,7 @@
 local overrides = require "custom.plugins.overrides"
 
 return {
+  ["buoto/gotests-vim"] = {},
   ["tpope/vim-rails"] = {},
   ["dyng/ctrlsf.vim"] = {},
   ["machakann/vim-highlightedyank"] = {},

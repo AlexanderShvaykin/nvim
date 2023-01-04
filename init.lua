@@ -11,6 +11,7 @@ opt.relativenumber = true
 vim.cmd[[ au InsertEnter * set norelativenumber ]]
 vim.cmd[[ au InsertLeave * set relativenumber ]]
 vim.cmd([[set cc=130]])
+vim.cmd([[let g:gotests_template = '']])
 
 vim.cmd([[let g:rails_projections = {
 \ "app/api/*.rb": {
