@@ -32,3 +32,7 @@ lspconfig.solargraph.setup {
     }
   }
 }
+
+lspconfig.elixirls.setup {
+  cmd = { "/Users/aleksandrsvajkin/.config/elixir-ls/language_server.sh" }
+}
