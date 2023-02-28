@@ -97,3 +97,7 @@ spase gf - Lexical keys
 :Etask
 :Eunittest
 :Eview
+
+### Useful packages
+- https://starship.rs
+- https://github.com/zsh-users/zsh-autosuggestions
