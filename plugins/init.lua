@@ -5,11 +5,6 @@ return {
   ["tpope/vim-rails"] = {},
   ["dyng/ctrlsf.vim"] = {},
   ["machakann/vim-highlightedyank"] = {},
-  ["nvim-telescope/telescope-live-grep-args.nvim"] = {
-    config = function ()
-      require("telescope").load_extension("live_grep_args")
-    end
-  },
   ["neovim/nvim-lspconfig"] = {
     config = function()
       require "plugins.configs.lspconfig"
@@ -43,42 +38,6 @@ return {
     after = "nvim-lspconfig",
     config = function()
       require "custom.plugins.null-ls"
-    end,
-  },
-
-  ["tzachar/cmp-tabnine"] = {
-    after = "nvim-cmp",
-    run = "./install.sh",
-    config = function()
-      local tabnine = require('cmp_tabnine.config')
-
-      tabnine.setup({
-        max_lines = 100,
-        max_num_results = 10,
-        sort = true,
-        run_on_every_keystroke = true,
-        snippet_placeholder = '..',
-        show_prediction_strength = true
-      })
-    end,
-  },
-
-  ["hrsh7th/nvim-cmp"] = {
-    override_options = function()
-      local cmp = require "cmp"
-
-      return {
-        mapping = {
-          ["<C-d>"] = cmp.mapping.scroll_docs(-8),
-        },
-        sources = {
-          { name = "luasnip" },
-          { name = "nvim_lsp" },
-          { name = "nvim_lua" },
-          { name = "path" },
-          { name = 'cmp_tabnine' },
-        },
-      }
     end,
   },
 

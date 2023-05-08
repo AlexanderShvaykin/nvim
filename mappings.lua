@@ -13,16 +13,6 @@ M.nvimtree = {
   },
 }
 
-M.telescope = {
-  plugin = true,
-
-  n = {
-    -- find
-    ["<leader>fw"] = { "<cmd> Telescope live_grep_args live_grep_args <CR>", "live grep" },
-  },
-}
-
-
 M.tabufline = {
   n = {
     ["<C-n>"] = {
