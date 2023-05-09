@@ -1,5 +1,9 @@
 local M = {}
 
+M.telescope = {
+  extensions_list = { "themes", "terms", "live_grep_args" },
+}
+
 M.treesitter = {
   ensure_installed = {
     "vim",

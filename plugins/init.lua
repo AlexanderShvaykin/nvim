@@ -25,22 +25,9 @@ return {
     override_options = overrides.nvimtree,
   },
 
-  -- Install a plugin
-  ["max397574/better-escape.nvim"] = {
-    event = "InsertEnter",
-    config = function()
-      require("better_escape").setup()
-    end,
+  ["nvim-telescope/telescope.nvim"] = {
+    override_options = overrides.telescope,
   },
 
-  -- code formatting, linting etc
-  ["jose-elias-alvarez/null-ls.nvim"] = {
-    after = "nvim-lspconfig",
-    config = function()
-      require "custom.plugins.null-ls"
-    end,
-  },
-
-  -- remove plugin
-  -- ["hrsh7th/cmp-path"] = false,
+  ["nvim-telescope/telescope-live-grep-args.nvim"] = { lazy = false },
 }
