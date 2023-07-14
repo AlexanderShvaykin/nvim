@@ -25,6 +25,7 @@ lspconfig.golangci_lint_ls.setup{
 lspconfig.solargraph.setup {
   on_attach = on_attach,
   capabilities = capabilities,
+  root_dir = lspconfig.util.root_pattern("Gemfile", "*gemspec", ".git"),
   settings = {
     solargraph = {
       useBundler = false,
