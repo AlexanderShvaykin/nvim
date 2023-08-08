@@ -43,7 +43,7 @@ M.nvimtree = {
 
   view = {
     adaptive_size = false,
-    side = "left",
+    side = "right",
     width = 30,
     hide_root_folder = true,
   },
