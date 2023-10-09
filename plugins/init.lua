@@ -30,4 +30,7 @@ return {
   },
 
   ["nvim-telescope/telescope-live-grep-args.nvim"] = { lazy = false },
+  ["mfussenegger/nvim-dap"] = { },
+  ["leoluz/nvim-dap-go"] = { },
+  ["rcarriga/nvim-dap-ui"] = { requires = {"mfussenegger/nvim-dap"} },
 }
