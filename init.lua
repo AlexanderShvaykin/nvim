@@ -21,3 +21,12 @@ vim.cmd([[let g:rails_projections = {
 \   ],
 \ }}
 ]])
+
+
+local config = {
+  file_type_keywords = {
+    ruby = { 'ruby', 'rails' },
+  },
+}
+
+require('dash').setup(config)

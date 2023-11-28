@@ -33,4 +33,5 @@ return {
   ["mfussenegger/nvim-dap"] = { },
   ["leoluz/nvim-dap-go"] = { },
   ["rcarriga/nvim-dap-ui"] = { requires = {"mfussenegger/nvim-dap"} },
+  ["mrjones2014/dash.nvim"] = { run = 'make install' },
 }
