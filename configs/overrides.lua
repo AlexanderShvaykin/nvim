@@ -1,18 +1,23 @@
 local M = {}
 
-M.telescope = {
-  extensions_list = { "themes", "terms", "live_grep_args" },
-}
-
 M.treesitter = {
   ensure_installed = {
     "vim",
     "lua",
     "html",
     "css",
+    "javascript",
+    "typescript",
+    "tsx",
     "c",
-    "ruby",
-    "go",
+    "markdown",
+    "markdown_inline",
+  },
+  indent = {
+    enable = true,
+    -- disable = {
+    --   "python"
+    -- },
   },
 }
 
@@ -27,6 +32,11 @@ M.mason = {
     "html-lsp",
     "typescript-language-server",
     "deno",
+    "prettier",
+
+    -- c/cpp stuff
+    "clangd",
+    "clang-format",
   },
 }
 
@@ -36,20 +46,8 @@ M.nvimtree = {
     enable = true,
   },
 
-  update_focused_file = {
-    enable = false,
-    update_cwd = false,
-  },
-
-  view = {
-    adaptive_size = false,
-    side = "right",
-    width = 30,
-  },
-
   renderer = {
     highlight_git = true,
-    root_folder_label = false,
     icons = {
       show = {
         git = true,

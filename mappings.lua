@@ -1,50 +1,48 @@
+---@type MappingsTable
 local M = {}
 
 M.general = {
   n = {
-    ["<leader>s"] = { "<cmd> w <CR>", "﬚  save file" },
+    [";"] = { ":", "enter command mode", opts = { nowait = true } },
+    ["<leader>s"] = { "<cmd> w <CR>", "Save file" },
+    ["<leader>gs"] = { "Telescope git_status", "Git status" },
+  },
+  v = {
+    [">"] = { ">gv", "indent"},
   },
 }
 
 M.nvimtree = {
-   n = {
-    ["<leader>e"] = { "<cmd> NvimTreeFindFile <CR>", "focus nvimtree" },
-    ["<leader><leader>"] = { "<cmd> NvimTreeToggle <CR>", "toggle nvimtree" },
-  },
+  n = {
+    -- toggle
+    ["<leader><leader>"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree" },
+  }
 }
 
 M.tabufline = {
+  plugin = true,
+
   n = {
     ["<C-n>"] = {
       function()
-        require("nvchad_ui.tabufline").tabuflineNext()
+        require("nvchad.tabufline").tabuflineNext()
       end,
-      "goto next buffer",
+      "Goto next buffer",
     },
 
     ["<C-p>"] = {
       function()
-        require("nvchad_ui.tabufline").tabuflinePrev()
+        require("nvchad.tabufline").tabuflinePrev()
       end,
-      "goto prev buffer",
+      "Goto prev buffer",
     },
-  }
-}
 
-M.telescope = {
-  plugin = true,
-
-  n = {
-    -- find
-    ["<leader>ff"] = { "<cmd> Telescope find_files <CR>", "find files" },
-    ["<leader>fw"] = { "<cmd> Telescope live_grep_args hidden=true <CR>", "live grep" },
-    ["<leader>fb"] = { "<cmd> Telescope buffers <CR>", "find buffers" },
-    ["<leader>fh"] = { "<cmd> Telescope help_tags <CR>", "help page" },
-    ["<leader>fo"] = { "<cmd> Telescope oldfiles <CR>", "find oldfiles" },
-    ["<leader>tk"] = { "<cmd> Telescope keymaps <CR>", "show keys" },
-
-    -- git
-    ["<leader>gs"] = { "<cmd> Telescope git_status <CR>", "git status" },
+    ["<leader>x"] = {
+      function()
+        require("nvchad.tabufline").close_buffer()
+      end,
+      "Close buffer",
+    },
   },
 }
 
