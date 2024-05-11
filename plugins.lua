@@ -51,21 +51,14 @@ local plugins = {
     lazy = false,
   },
   {
-    "codota/tabnine-nvim",
-    build = "./dl_binaries.sh",
-    lazy = false,
-    commit = "65954170e19d99a50beecc08871e2a2b4c7ec161",
-    config = function()
-      require('tabnine').setup({
-        disable_auto_comment=true,
-        accept_keymap="<C-y>",
-        dismiss_keymap = "<C-]>",
-        debounce_ms = 800,
-        suggestion_color = {gui = "#808080", cterm = 244},
-        exclude_filetypes = {"TelescopePrompt", "NvimTree"},
-        log_file_path = nil, -- absolute path to Tabnine log file
-      })
+    "Exafunction/codeium.vim",
+    config = function ()
+      vim.keymap.set('i', '<C-g>', function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
+      vim.keymap.set('i', '<C-f>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
+      vim.keymap.set('i', '<C-d>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
+      vim.keymap.set('i', '<C-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
     end,
+    lazy = false,
   },
 
   -- To make a plugin not be loaded
