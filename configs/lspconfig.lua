@@ -4,7 +4,7 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require "lspconfig"
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "html", "cssls", "tsserver", "clangd" }
+local servers = { "html", "cssls", "tsserver", "clangd", "ruby_lsp" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -19,14 +19,32 @@ end
 --   capabilities = capabilities,
 -- }
 
-lspconfig.solargraph.setup {
+-- lspconfig.solargraph.setup {
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+--   root_dir = lspconfig.util.root_pattern("Gemfile", "*gemspec", ".git"),
+--   settings = {
+--     solargraph = {
+--       useBundler = false,
+--       diagnostics = false,
+--     }
+--   }
+-- }
+
+lspconfig.gopls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  root_dir = lspconfig.util.root_pattern("Gemfile", "*gemspec", ".git"),
+  cmd = { "gopls", "-remote=auto" }, -- для совместимости с более старыми версиями Go
+  -- cmd = {"gopls"}, -- для более новых версий Go
   settings = {
-    solargraph = {
-      useBundler = false,
-      diagnostics = false,
-    }
-  }
+    gopls = {
+      analyses = {
+        unusedParams = true,
+        unusedResults = true,
+        unusedLocals = true,
+        unusedImports = true,
+        structTags = true,
+      },
+    },
+  },
 }
