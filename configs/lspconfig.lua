@@ -4,7 +4,7 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require "lspconfig"
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "html", "cssls", "tsserver", "clangd", "ruby_lsp" }
+local servers = { "html", "cssls", "clangd", "ts_ls" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -13,23 +13,17 @@ for _, lsp in ipairs(servers) do
   }
 end
 
--- FIXME: ruby_ls with array requestys params after update project to ruby > 3
--- lspconfig.ruby_ls.setup {
---   on_attach = on_attach,
---   capabilities = capabilities,
--- }
-
--- lspconfig.solargraph.setup {
---   on_attach = on_attach,
---   capabilities = capabilities,
---   root_dir = lspconfig.util.root_pattern("Gemfile", "*gemspec", ".git"),
---   settings = {
---     solargraph = {
---       useBundler = false,
---       diagnostics = false,
---     }
---   }
--- }
+lspconfig.solargraph.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  root_dir = lspconfig.util.root_pattern("Gemfile", "*gemspec", ".git"),
+  settings = {
+    solargraph = {
+      useBundler = true,
+      diagnostics = false,
+    }
+  }
+}
 
 lspconfig.gopls.setup {
   on_attach = on_attach,
